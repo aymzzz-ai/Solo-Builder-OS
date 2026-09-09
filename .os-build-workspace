@@ -1,0 +1,12 @@
+This repo is the OS-build / template workspace — NOT a conforming business instance.
+
+scripts/project-contract.js refuses to scaffold instance data while this sentinel exists,
+so the template never gets polluted with a single business's wiki/decisions/etc.
+
+To stand up a real business (Step 9 — onboarding):
+  1. Clone/copy this repo to a new location dedicated to that one business.
+  2. Delete this file (.os-build-workspace) in that clone — the deliberate
+     "this clone is now a business instance" gesture.
+  3. node scripts/project-contract.js <business-slug>
+  4. Fill .secrets/.env, then git init && commit.
+     (No skill-install step — the skills ARE .claude/skills/ and travel with the clone.)

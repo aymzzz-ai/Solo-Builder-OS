@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # No install step on purpose: the acceptance suite and the export scanner both run
+      # on the Node standard library. Playwright is an optional extra for capturing web
+      # sources (see docs/extensibility.md) and nothing here needs it.
+
+      - name: Acceptance suite
+        run: node test/run.js
+
+      - name: Secret scan (export-check)
+        run: node scripts/export-check.js os-core

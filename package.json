@@ -1,0 +1,20 @@
+{
+  "name": "solo-builder-os",
+  "version": "1.0.0",
+  "description": "Solo Builder OS \u2014 a markdown+git operating system for a solo builder, around the build, never inside it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/run.js",
+    "export-check": "node scripts/export-check.js os-core"
+  },
+  "keywords": [],
+  "author": "aymz",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}
